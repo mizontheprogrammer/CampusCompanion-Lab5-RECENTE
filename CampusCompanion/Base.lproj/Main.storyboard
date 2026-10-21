@@ -1,0 +1,356 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="24412" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="nav-controller">
+    <device id="retina6_12" orientation="portrait" appearance="light" />
+    <dependencies>
+        <deployment identifier="iOS" />
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="24405" />
+        <capability name="Safe area layout guides" minToolsVersion="9.0" />
+        <capability name="System colors in document resources" minToolsVersion="11.0" />
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0" />
+    </dependencies>
+    <scenes>
+        <scene sceneID="nav-scene">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nav-controller" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="nav-bar">
+                        <rect key="frame" x="0.0" y="118" width="393" height="54" />
+                        <autoresizingMask key="autoresizingMask" />
+                    </navigationBar>
+                    <connections>
+                        <segue destination="welcome-controller" kind="relationship" relationship="rootViewController" id="nav-root-segue" />
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nav-first-responder" sceneMemberID="firstResponder" />
+            </objects>
+            <point key="canvasLocation" x="-1110" y="10" />
+        </scene>
+        <scene sceneID="welcome-scene">
+            <objects>
+                <viewController id="welcome-controller" customClass="ViewController" customModule="CampusCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="welcome-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852" />
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="welcome-scroll">
+                                <rect key="frame" x="0.0" y="172" width="393" height="612" />
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="welcome-content">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="826.3333333333334" />
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="welcome-stack">
+                                                <rect key="frame" x="24" y="40" width="345" height="746.3333333333334" />
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Campus Companion" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="title-label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="345" height="33.666666666666664" />
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="28" />
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Your Campus, In Your Pocket" textAlignment="center" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="subtitle-label">
+                                                        <rect key="frame" x="0.0" y="49.666666666666686" width="345" height="19.333333333333329" />
+                                                        <fontDescription key="fontDescription" type="system" pointSize="16" />
+                                                        <color key="textColor" systemColor="secondaryLabelColor" />
+                                                    </label>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="image-container">
+                                                        <rect key="frame" x="0.0" y="85" width="345" height="150" />
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="graduationcap.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="campus-image">
+                                                                <rect key="frame" x="97.666666666666686" y="0.6666666666666714" width="150" height="148.66666666666669" />
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="90" id="campus-image-height" />
+                                                                    <constraint firstAttribute="width" constant="90" id="campus-image-width" />
+                                                                </constraints>
+                                                                <color key="tintColor" red="0" green="0.5803921568627451" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                            </imageView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="campus-image" firstAttribute="centerX" secondItem="image-container" secondAttribute="centerX" id="campus-image-center-x" />
+                                                            <constraint firstItem="campus-image" firstAttribute="centerY" secondItem="image-container" secondAttribute="centerY" id="campus-image-center-y" />
+                                                            <constraint firstAttribute="height" constant="110" id="image-container-height" />
+                                                        </constraints>
+                                                    </view>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="get-started-button">
+                                                        <rect key="frame" x="0.0" y="251" width="345" height="30" />
+                                                        <state key="normal" title="Get Started" />
+                                                        <connections>
+                                                            <action selector="getStartedButtonTapped:" destination="welcome-controller" eventType="touchUpInside" id="get-started-action" />
+                                                        </connections>
+                                                        <color key="tintColor" red="0" green="0.5803921568627451" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                    </button>
+                                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="none" placeholder="Enter your name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="name-text-field">
+                                                        <rect key="frame" x="0.0" y="297" width="345" height="34" />
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                        <textInputTraits key="textInputTraits" returnKeyType="done" textContentType="name" />
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="34" id="name-field-height" />
+                                                        </constraints>
+                                                    </textField>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="notify-row">
+                                                        <rect key="frame" x="0.0" y="347" width="345" height="28" />
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Notify me about events" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="notify-label">
+                                                                <rect key="frame" x="0.0" y="4" width="177" height="20.333333333333332" />
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="notify-switch">
+                                                                <rect key="frame" x="284" y="0.0" width="63" height="28" />
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="role-segmented-control">
+                                                        <rect key="frame" x="0.0" y="391" width="345" height="32" />
+                                                        <segments>
+                                                            <segment title="Student" />
+                                                            <segment title="Faculty" />
+                                                        </segments>
+                                                    </segmentedControl>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fill" alignment="fill" translatesAutoresizingMaskIntoConstraints="NO" id="date-row" axis="vertical" spacing="4">
+                                                        <rect key="frame" x="0.0" y="438" width="345" height="50" />
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Preferred Event Date" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="date-label">
+                                                                <rect key="frame" x="0.0" y="14.999999999999998" width="158.66666666666666" height="20.333333333333329" />
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="date-picker-container">
+                                                                <subviews>
+                                                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="event-date-picker">
+                                                                        <rect key="frame" x="198" y="0.0" width="147" height="50" />
+                                                                        <constraints>
+                                                                            <constraint firstAttribute="width" constant="147" id="date-picker-fixed-width" />
+                                                                            <constraint firstAttribute="height" constant="34" id="date-picker-fixed-height" />
+                                                                        </constraints>
+                                                                    </datePicker>
+                                                                </subviews>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="34" id="date-container-height" />
+                                                                    <constraint firstItem="event-date-picker" firstAttribute="centerX" secondItem="date-picker-container" secondAttribute="centerX" id="date-picker-center-x" />
+                                                                    <constraint firstItem="event-date-picker" firstAttribute="centerY" secondItem="date-picker-container" secondAttribute="centerY" id="date-picker-center-y" />
+                                                                </constraints>
+                                                            </view>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="guest-row">
+                                                        <rect key="frame" x="0.0" y="504" width="345" height="32" />
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Guests: 0" lineBreakMode="tailTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="guest-count-label">
+                                                                <rect key="frame" x="0.0" y="5.9999999999999982" width="155.33333333333334" height="20.333333333333329" />
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0" minimumValue="0" maximumValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="guest-stepper">
+                                                                <rect key="frame" x="251" y="0.0" width="94" height="32" />
+                                                                <connections>
+                                                                    <action selector="guestStepperChanged:" destination="welcome-controller" eventType="valueChanged" id="guest-stepper-action" />
+                                                                </connections>
+                                                            </stepper>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="explore-button">
+                                                        <rect key="frame" x="0.0" y="552" width="345" height="44" />
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="explore-height" />
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                        <state key="normal" title="Explore Campus">
+                                                            <color key="titleColor" red="0" green="0.5803921568627451" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="exploreButtonTapped:" destination="welcome-controller" eventType="touchUpInside" id="explore-action" />
+                                                        </connections>
+                                                        <color key="tintColor" red="0" green="0.5803921568627451" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="announcements-button">
+                                                        <rect key="frame" x="0.0" y="612" width="345" height="44" />
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="30" id="announcements-height" />
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17" />
+                                                        <state key="normal" title="Campus Announcements">
+                                                            <color key="titleColor" red="0" green="0.5803921568627451" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="announcements-controller" kind="show" id="show-announcements-segue" />
+                                                        </connections>
+                                                        <color key="tintColor" red="0" green="0.5803921568627451" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="welcome-stack" secondAttribute="bottom" constant="40" id="welcome-stack-bottom" relation="greaterThanOrEqual" />
+                                            <constraint firstItem="welcome-stack" firstAttribute="leading" secondItem="welcome-content" secondAttribute="leading" constant="32" id="welcome-stack-leading" />
+                                            <constraint firstItem="welcome-stack" firstAttribute="top" secondItem="welcome-content" secondAttribute="top" constant="8" id="welcome-stack-top" />
+                                            <constraint firstAttribute="trailing" secondItem="welcome-stack" secondAttribute="trailing" constant="32" id="welcome-stack-trailing" />
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="welcome-content" firstAttribute="bottom" secondItem="welcome-scroll-content-guide" secondAttribute="bottom" id="content-bottom" />
+                                    <constraint firstItem="welcome-content" firstAttribute="leading" secondItem="welcome-scroll-content-guide" secondAttribute="leading" id="content-leading" />
+                                    <constraint firstItem="welcome-content" firstAttribute="height" relation="greaterThanOrEqual" secondItem="welcome-scroll-frame-guide" secondAttribute="height" id="content-min-height" />
+                                    <constraint firstItem="welcome-content" firstAttribute="top" secondItem="welcome-scroll-content-guide" secondAttribute="top" id="content-top" />
+                                    <constraint firstItem="welcome-content" firstAttribute="trailing" secondItem="welcome-scroll-content-guide" secondAttribute="trailing" id="content-trailing" />
+                                    <constraint firstItem="welcome-content" firstAttribute="width" secondItem="welcome-scroll-frame-guide" secondAttribute="width" id="content-width" />
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="welcome-scroll-content-guide" />
+                                <viewLayoutGuide key="frameLayoutGuide" id="welcome-scroll-frame-guide" />
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="welcome-safe-area" />
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" />
+                        <constraints>
+                            <constraint firstItem="welcome-safe-area" firstAttribute="bottom" secondItem="welcome-scroll" secondAttribute="bottom" id="scroll-bottom" />
+                            <constraint firstItem="welcome-scroll" firstAttribute="leading" secondItem="welcome-safe-area" secondAttribute="leading" id="scroll-leading" />
+                            <constraint firstItem="welcome-scroll" firstAttribute="top" secondItem="welcome-safe-area" secondAttribute="top" id="scroll-top" />
+                            <constraint firstItem="welcome-safe-area" firstAttribute="trailing" secondItem="welcome-scroll" secondAttribute="trailing" id="scroll-trailing" />
+                        </constraints>
+                        <color key="tintColor" red="0" green="0.5803921568627451" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+                    </view>
+                    <navigationItem key="navigationItem" title="Campus Companion" id="welcome-navigation-item" />
+                    <connections>
+                        <outlet property="eventDatePicker" destination="event-date-picker" id="outlet-date" />
+                        <outlet property="guestCountLabel" destination="guest-count-label" id="outlet-guest-label" />
+                        <outlet property="guestStepper" destination="guest-stepper" id="outlet-guest-stepper" />
+                        <outlet property="nameTextField" destination="name-text-field" id="outlet-name" />
+                        <outlet property="notifySwitch" destination="notify-switch" id="outlet-notify" />
+                        <outlet property="roleSegmentedControl" destination="role-segmented-control" id="outlet-role" />
+                        <outlet property="subtitleLabel" destination="subtitle-label" id="outlet-subtitle" />
+                        <outlet property="titleLabel" destination="title-label" id="outlet-title" />
+                        <segue destination="detail-controller" kind="show" identifier="ShowDetailSegue" id="show-detail-segue" />
+                        <outlet property="campusImageView" destination="campus-image" id="outlet-campus-image" />
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="welcome-first-responder" sceneMemberID="firstResponder" />
+            </objects>
+            <point key="canvasLocation" x="-310.68702290076334" y="9.8591549295774659" />
+        </scene>
+        <scene sceneID="detail-scene">
+            <objects>
+                <viewController id="detail-controller" customClass="DetailViewController" customModule="CampusCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="detail-view">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852" />
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Campus Events" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="message-label">
+                                <rect key="frame" x="24" y="467.33333333333331" width="345" height="21.666666666666686" />
+                                <fontDescription key="fontDescription" type="system" pointSize="18" />
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="detail-safe-area" />
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" />
+                        <constraints>
+                            <constraint firstItem="message-label" firstAttribute="centerY" secondItem="detail-safe-area" secondAttribute="centerY" id="message-center-y" />
+                            <constraint firstItem="message-label" firstAttribute="leading" secondItem="detail-safe-area" secondAttribute="leading" constant="24" id="message-leading" />
+                            <constraint firstItem="detail-safe-area" firstAttribute="trailing" secondItem="message-label" secondAttribute="trailing" constant="24" id="message-trailing" />
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Campus Events" id="detail-navigation-item" />
+                    <connections>
+                        <outlet property="messageLabel" destination="message-label" id="outlet-message" />
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="detail-first-responder" sceneMemberID="firstResponder" />
+            </objects>
+            <point key="canvasLocation" x="1570" y="-350" />
+        </scene>
+        <scene sceneID="announcements-scene">
+            <objects>
+                <tableViewController storyboardIdentifier="AnnouncementsViewController" id="announcements-controller" customClass="AnnouncementsViewController" customModule="CampusCompanion" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="92" sectionHeaderHeight="28" sectionFooterHeight="28" id="announcements-table">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852" />
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" />
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" />
+                        <color key="tintColor" systemColor="systemGreenColor" />
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AnnouncementCell" rowHeight="92" id="announcement-cell" customClass="AnnouncementCell" customModule="CampusCompanion" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="50" width="393" height="92" />
+                                <autoresizingMask key="autoresizingMask" />
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="announcement-cell" id="announcement-cell-content">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="92" />
+                                    <autoresizingMask key="autoresizingMask" />
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" image="megaphone.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="announcement-icon">
+                                            <rect key="frame" x="16" y="30.333333333333329" width="32" height="31.666666666666671" />
+                                            <color key="tintColor" systemColor="systemGreenColor" />
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="32" id="icon-height" />
+                                                <constraint firstAttribute="width" constant="32" id="icon-width" />
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Announcement Title" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="announcement-title-label">
+                                            <rect key="frame" x="64" y="10" width="313" height="20" />
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16" />
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Category • Date" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="announcement-date-label">
+                                            <rect key="frame" x="64" y="33" width="313" height="17" />
+                                            <color key="tintColor" systemColor="systemGreenColor" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="14" />
+                                            <color key="textColor" systemColor="secondaryLabelColor" />
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Priority • Office" lineBreakMode="wordWrap" numberOfLines="0" translatesAutoresizingMaskIntoConstraints="NO" id="announcement-priority-label">
+                                            <rect key="frame" x="64" y="53" width="313" height="15.666666666666671" />
+                                            <fontDescription key="fontDescription" type="system" pointSize="13" />
+                                            <color key="textColor" systemColor="secondaryLabelColor" />
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="announcement-priority-label" secondAttribute="bottom" constant="12" id="priority-bottom" />
+                                        <constraint firstItem="announcement-date-label" firstAttribute="leading" secondItem="announcement-title-label" secondAttribute="leading" id="date-leading" />
+                                        <constraint firstItem="announcement-date-label" firstAttribute="top" secondItem="announcement-title-label" secondAttribute="bottom" constant="3" id="date-top-title" />
+                                        <constraint firstAttribute="trailing" secondItem="announcement-date-label" secondAttribute="trailing" constant="16" id="date-trailing" />
+                                        <constraint firstItem="announcement-icon" firstAttribute="centerY" secondItem="announcement-cell-content" secondAttribute="centerY" id="icon-center-y" />
+                                        <constraint firstItem="announcement-icon" firstAttribute="leading" secondItem="announcement-cell-content" secondAttribute="leading" constant="16" id="icon-leading" />
+                                        <constraint firstItem="announcement-priority-label" firstAttribute="leading" secondItem="announcement-title-label" secondAttribute="leading" id="priority-leading" />
+                                        <constraint firstItem="announcement-priority-label" firstAttribute="top" secondItem="announcement-date-label" secondAttribute="bottom" constant="3" id="priority-top-date" />
+                                        <constraint firstAttribute="trailing" secondItem="announcement-priority-label" secondAttribute="trailing" constant="16" id="priority-trailing" />
+                                        <constraint firstItem="announcement-title-label" firstAttribute="leading" secondItem="announcement-icon" secondAttribute="trailing" constant="16" id="title-leading-icon" />
+                                        <constraint firstItem="announcement-title-label" firstAttribute="top" secondItem="announcement-cell-content" secondAttribute="top" constant="10" id="title-top" />
+                                        <constraint firstAttribute="trailing" secondItem="announcement-title-label" secondAttribute="trailing" constant="16" id="title-trailing" />
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="categoryIconImageView" destination="announcement-icon" id="outlet-cell-icon" />
+                                    <outlet property="dateLabel" destination="announcement-date-label" id="outlet-cell-date" />
+                                    <outlet property="priorityLabel" destination="announcement-priority-label" id="outlet-cell-priority" />
+                                    <outlet property="titleLabel" destination="announcement-title-label" id="outlet-cell-title" />
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="announcements-controller" id="announcements-data-source" />
+                            <outlet property="delegate" destination="announcements-controller" id="announcements-delegate" />
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Campus Announcements" id="announcements-navigation-item">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="announcements-refresh">
+                            <connections>
+                                <action selector="refreshTapped:" destination="announcements-controller" id="refresh-action" />
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <segue destination="detail-controller" kind="show" identifier="ShowAnnouncementDetailSegue" id="show-announcement-detail-segue" />
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="announcements-first-responder" sceneMemberID="firstResponder" />
+            </objects>
+            <point key="canvasLocation" x="640" y="600" />
+        </scene>
+    </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="show-announcement-detail-segue" />
+    </inferredMetricsTieBreakers>
+    <resources>
+        <image name="graduationcap.fill" catalog="system" width="128" height="123" />
+        <image name="megaphone.fill" catalog="system" width="128" height="112" />
+        <systemColor name="secondaryLabelColor">
+            <color red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB" />
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace" />
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB" />
+        </systemColor>
+    </resources>
+</document>

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#f7f9fc">
+  <title>Campus Companion</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="device" aria-label="Campus Companion app preview">
+    <div class="status-bar" aria-hidden="true">
+      <span>9:41</span>
+      <span class="status-icons">● ◔ ▰</span>
+    </div>
+
+    <section class="screen active" id="welcome-screen" aria-labelledby="welcome-nav-title">
+      <header class="navigation-bar">
+        <span class="nav-spacer"></span>
+        <h1 id="welcome-nav-title">Campus Companion</h1>
+        <span class="nav-spacer"></span>
+      </header>
+
+      <div class="scroll-content welcome-content">
+        <div class="hero-icon" aria-hidden="true">
+          <svg viewBox="0 0 120 120" role="img">
+            <circle cx="60" cy="60" r="58" fill="currentColor" opacity=".1"/>
+            <path d="M16 50 60 27l44 23-44 23L16 50Zm17 14v20c16 12 38 12 54 0V64L60 78 33 64Zm60-4v25" fill="currentColor"/>
+            <circle cx="93" cy="89" r="5" fill="currentColor"/>
+          </svg>
+        </div>
+        <h2>Campus Companion</h2>
+        <p class="subtitle" id="subtitle">Your Campus, In Your Pocket</p>
+        <button class="text-button" id="get-started" type="button">Get Started</button>
+
+        <div class="form-card">
+          <label class="field-label" for="student-name">Student name</label>
+          <input id="student-name" type="text" placeholder="Enter your name" autocomplete="name">
+
+          <div class="form-row">
+            <label for="notify-switch">Notify me about events</label>
+            <label class="switch">
+              <input id="notify-switch" type="checkbox">
+              <span aria-hidden="true"></span>
+            </label>
+          </div>
+
+          <fieldset class="segmented" aria-label="Campus role">
+            <input type="radio" name="role" id="role-student" value="Student" checked>
+            <label for="role-student">Student</label>
+            <input type="radio" name="role" id="role-faculty" value="Faculty">
+            <label for="role-faculty">Faculty</label>
+          </fieldset>
+
+          <div class="date-field">
+            <label for="event-date">Preferred event date</label>
+            <input id="event-date" type="date" value="2026-10-12" min="2026-10-04">
+          </div>
+
+          <div class="form-row guests-row">
+            <span>Number of guests</span>
+            <div class="stepper" aria-label="Number of guests">
+              <button id="guest-minus" type="button" aria-label="Remove guest">−</button>
+              <output id="guest-count">1</output>
+              <button id="guest-plus" type="button" aria-label="Add guest">+</button>
+            </div>
+          </div>
+        </div>
+
+        <button class="primary-button" id="explore-campus" type="button">Explore Campus</button>
+        <button class="secondary-button" id="show-announcements" type="button">Campus Announcements</button>
+        <p class="completion-note">Exercises 1–3 complete · UIKit + Storyboard equivalent</p>
+      </div>
+    </section>
+
+    <section class="screen" id="announcements-screen" aria-labelledby="announcements-title">
+      <header class="navigation-bar">
+        <button class="back-button" type="button" data-back aria-label="Back to Campus Companion">‹ <span>Campus</span></button>
+        <h1 id="announcements-title">Announcements</h1>
+        <span class="nav-spacer"></span>
+      </header>
+      <div class="scroll-content announcements-list" id="announcements-list"></div>
+    </section>
+
+    <section class="screen" id="detail-screen" aria-labelledby="detail-title">
+      <header class="navigation-bar">
+        <button class="back-button" type="button" data-back aria-label="Go back">‹ <span>Back</span></button>
+        <h1 id="detail-title">Campus Events</h1>
+        <span class="nav-spacer"></span>
+      </header>
+      <div class="detail-content" id="detail-content"></div>
+    </section>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
