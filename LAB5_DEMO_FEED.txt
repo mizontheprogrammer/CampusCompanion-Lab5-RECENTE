@@ -1,4 +1,0 @@
-The instructor repository returns 404. The app now explicitly uses an HTTPS demo feed served by httpbingo.org, an HTTP request testing service. Its /base64 endpoint returns the sample JSON encoded in its URL. This exercises a real URLSession HTTPS request, status checking, JSON decoding, Core Data replacement, persistence, and UI updates. It is sample data, not an independently maintained campus feed. The source is labeled in the app footer, confirmation alert, and console. The original instructor URL remains in RemoteEndpoint.instructorAnnouncements. To restore the course feed when available, point RemoteEndpoint.announcements to that URL and update the source label.
-
-Sample data: Evidence/demo-announcements.json
-Service documentation: https://httpbingo.org/
