@@ -18,6 +18,7 @@
 		A10000000000000000000009 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A40000000000000000000002 /* LaunchScreen.storyboard */; };
 		A1000000000000000000000A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000A /* Assets.xcassets */; };
 		A1000000000000000000000D /* AnnouncementDTO.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2000000000000000000000D; };
+B10000000000000000000001 = {isa = PBXBuildFile; fileRef = B20000000000000000000001; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,8 @@
 		A2000000000000000000000B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A2000000000000000000000C /* CampusCompanion.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CampusCompanion.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2000000000000000000000D /* AnnouncementDTO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnnouncementDTO.swift; sourceTree = "<group>"; };
+B20000000000000000000001 = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests/AnnouncementNetworkingTests.swift; sourceTree = SOURCE_ROOT; };
+B20000000000000000000002 = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; path = CampusCompanionTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +47,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+B50000000000000000000002 = {isa = PBXFrameworksBuildPhase; buildActionMask = 2147483647; files = (); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -52,6 +56,7 @@
 			children = (
 				A30000000000000000000002 /* CampusCompanion */,
 				A30000000000000000000003 /* Products */,
+                B20000000000000000000001,
 			);
 			sourceTree = "<group>";
 		};
@@ -78,6 +83,7 @@
 			isa = PBXGroup;
 			children = (
 				A2000000000000000000000C /* CampusCompanion.app */,
+                B20000000000000000000002,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -102,7 +108,20 @@
 			productReference = A2000000000000000000000C /* CampusCompanion.app */;
 			productType = "com.apple.product-type.application";
 		};
+B60000000000000000000001 = {
+isa = PBXNativeTarget;
+buildConfigurationList = B90000000000000000000001;
+buildPhases = (B50000000000000000000001, B50000000000000000000002,);
+buildRules = ();
+dependencies = (B80000000000000000000001,);
+name = CampusCompanionTests;
+productName = CampusCompanionTests;
+productReference = B20000000000000000000002;
+productType = "com.apple.product-type.bundle.unit-test";
+};
 /* End PBXNativeTarget section */
+B70000000000000000000001 = {isa = PBXContainerItemProxy; containerPortal = A70000000000000000000001; proxyType = 1; remoteGlobalIDString = A60000000000000000000001; remoteInfo = CampusCompanion; };
+B80000000000000000000001 = {isa = PBXTargetDependency; target = A60000000000000000000001; targetProxy = B70000000000000000000001; };
 
 
 /* Begin PBXProject section */
@@ -132,6 +151,7 @@
 			projectRoot = "";
 			targets = (
 				A60000000000000000000001 /* CampusCompanion */,
+                B60000000000000000000001,
 			);
 		};
 /* End PBXProject section */
@@ -165,6 +185,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+B50000000000000000000001 = {isa = PBXSourcesBuildPhase; buildActionMask = 2147483647; files = (B10000000000000000000001,); runOnlyForDeploymentPostprocessing = 0; };
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
@@ -279,6 +300,8 @@
 			};
 			name = Release;
 		};
+B40000000000000000000001 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CampusCompanion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CampusCompanion"; GENERATE_INFOPLIST_FILE = YES; PRODUCT_BUNDLE_IDENTIFIER = edu.feu.mad2.CampusCompanionTests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 17.0; TARGETED_DEVICE_FAMILY = "1,2"; CODE_SIGN_STYLE = Automatic;}; name = Debug; };
+B40000000000000000000002 = {isa = XCBuildConfiguration; buildSettings = {BUNDLE_LOADER = "$(TEST_HOST)"; TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CampusCompanion.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/CampusCompanion"; GENERATE_INFOPLIST_FILE = YES; PRODUCT_BUNDLE_IDENTIFIER = edu.feu.mad2.CampusCompanionTests; PRODUCT_NAME = "$(TARGET_NAME)"; SWIFT_VERSION = 5.0; IPHONEOS_DEPLOYMENT_TARGET = 17.0; TARGETED_DEVICE_FAMILY = "1,2"; CODE_SIGN_STYLE = Automatic;}; name = Release; };
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -300,6 +323,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
+B90000000000000000000001 = {isa = XCConfigurationList; buildConfigurations = (B40000000000000000000001, B40000000000000000000002,); defaultConfigurationIsVisible = 0; defaultConfigurationName = Release; };
 /* End XCConfigurationList section */
 	};
 	rootObject = A70000000000000000000001 /* Project object */;

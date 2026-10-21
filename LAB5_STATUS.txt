@@ -1,0 +1,40 @@
+Laboratory Exercise 5 implementation
+
+Implemented:
+- Storyboard system Refresh button wired to refreshTapped(_:).
+- Named HTTPS endpoint and URLSession.shared.dataTask request with resume().
+- Error, HTTP 200-299 status, then data validation.
+- Raw JSON and byte count console logging.
+- Separate AnnouncementDTO: Codable with title, date, category, location, priorityLevel.
+- JSONDecoder do/catch with visible decoding-error console output.
+- Main-thread Core Data replacement, save, existing loadAnnouncements() reload,
+  and Server Reached alert reporting the exact response byte count.
+- Location and Priority Level stored and displayed in rows and details.
+- Migration of the previous programmatic Core Data model without deleting user data.
+- No automatic fetch on launch; Refresh is the request trigger.
+- Earlier preferences, navigation, local seeding, and swipe-to-delete remain available.
+- Reflection in LAB5_REFLECTION.txt.
+
+Demo endpoint update:
+The instructor repository remains unavailable (404). The active endpoint now
+uses httpbingo.org over HTTPS to return explicitly labeled sample JSON.
+This is a real network request to a demo service, not the instructor's campus feed.
+The JSON is echoed from the payload encoded in the endpoint URL.
+The app footer, success alert, and console identify the demo source.
+The original instructor URL is preserved in RemoteEndpoint.instructorAnnouncements.
+See LAB5_DEMO_FEED.txt for details and restoration instructions.
+Screenshots from this run demonstrate the demo workflow and do not establish
+that the original instructor feed was repaired.
+
+Verification: All 3 Xcode Simulator tests passed with 0 failures.
+Tests cover DTO decoding, required challenge fields, legacy SQLite migration
+and reopen, refresh with mocked HTTP data, alert presentation, duplicate
+prevention, empty feed, and unchanged data after HTTP, decode, and offline errors.
+Mocks are test-only; the app still uses the required HTTPS endpoint.
+
+Live demo verification: Refresh received 508 bytes over HTTPS and saved 3 announcements.
+The on-disk SQLite store contains their Location and Priority Level values.
+All four screenshots are in Evidence/lab5-01-before-refresh.png,
+lab5-02-server-reached.png, lab5-03-xcode-console.png, and lab5-04-after-refresh.png.
+Run scheme: Thread Performance Checker disabled because it stalled simulator launch;
+Main Thread Checker remains enabled.
