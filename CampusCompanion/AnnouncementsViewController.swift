@@ -2,27 +2,10 @@ import UIKit
 import CoreData
 
 private enum RemoteEndpoint {
-    // The PDF's repository currently returns 404. Retain its address for restoration.
-    static let instructorAnnouncements = URL(
-        string: "https://raw.githubusercontent.com/feu-mad2/" +
-            "campus-companion-api/main/announcements.json"
-    )!
-
-    // Transparent demo alternative: a real HTTPS GET returns these sample JSON bytes.
-    // This public HTTP testing service echoes the payload encoded in the URL.
-    private static let demoPayload =
-        "WwogIHsKICAgICJ0aXRsZSI6ICJNaWR0ZXJtIEV4YW0gU2NoZWR1bGUiLAogICAgImRhdGUiOiAiMjAyNi0xMC0yNSIsCiAgICAi" +
-        "Y2F0ZWdvcnkiOiAiQWNhZGVtaWMiLAogICAgImxvY2F0aW9uIjogIkxpYnJhcnksIFJvb20gMjEwIiwKICAgICJwcmlvcml0eUxl" +
-        "dmVsIjogIkhpZ2giCiAgfSwKICB7CiAgICAidGl0bGUiOiAiTGlicmFyeSBFeHRlbmRlZCBIb3VycyIsCiAgICAiZGF0ZSI6ICIy" +
-        "MDI2LTEwLTI2IiwKICAgICJjYXRlZ29yeSI6ICJHZW5lcmFsIiwKICAgICJsb2NhdGlvbiI6ICJNYWluIExpYnJhcnkiLAogICAg" +
-        "InByaW9yaXR5TGV2ZWwiOiAiTWVkaXVtIgogIH0sCiAgewogICAgInRpdGxlIjogIkNvdW5jaWwgRWxlY3Rpb24gUmVzdWx0cyIs" +
-        "CiAgICAiZGF0ZSI6ICIyMDI2LTEwLTI3IiwKICAgICJjYXRlZ29yeSI6ICJBbm5vdW5jZW1lbnQiLAogICAgImxvY2F0aW9uIjog" +
-        "IlN0dWRlbnQgQ291bmNpbCBPZmZpY2UiLAogICAgInByaW9yaXR5TGV2ZWwiOiAiTG93IgogIH0KXQ=="
     static let announcements = URL(
-        string: "https://httpbingo.org/base64/" + demoPayload +
-            "?content-type=application/json"
+        string: "https://raw.githubusercontent.com/vohn-dev/campus-companion-api/refs/heads/main/announcements.json"
     )!
-    static let sourceDescription = "HTTPS demo feed - sample data"
+    static let sourceDescription = "Campus announcements API"
 }
 
 class AnnouncementsViewController: UITableViewController {
@@ -45,13 +28,7 @@ class AnnouncementsViewController: UITableViewController {
         title = "Campus Announcements"
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 140
-        let sourceLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 52))
-        sourceLabel.text = "Demo feed • Sample announcements\nInstructor feed unavailable (404)"
-        sourceLabel.font = .preferredFont(forTextStyle: .caption1)
-        sourceLabel.textColor = .secondaryLabel
-        sourceLabel.textAlignment = .center
-        sourceLabel.numberOfLines = 2
-        tableView.tableFooterView = sourceLabel
+
     }
 
     @IBAction func refreshTapped(_ sender: UIBarButtonItem) {
